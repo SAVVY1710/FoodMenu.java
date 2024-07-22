@@ -148,6 +148,57 @@ class Practice2 extends JPanel
         pa.setLayout(new BorderLayout());
         JPanel east = new JPanel(new GridLayout(8,1));
         JPanel west = new JPanel(new GridLayout(8,1));
+        JPanel center = new JPanel(new GridLayout(6,1));
+        center.setBackground(Color.white);
+        pa.add(east, BorderLayout.EAST);
+        pa.add(west, BorderLayout.WEST);
+        pa.add(center, BorderLayout.CENTER);
+        east.setPreferredSize(new Dimension(100, 600));
+        west.setPreferredSize(new Dimension(100, 600));
+        center.setPreferredSize(new Dimension(400, 600));
+        JTextArea main = new JTextArea("Main Dish");
+        main.setEditable(false);
+        JTextArea snack = new JTextArea("Side");
+        snack.setPreferredSize(new Dimension(70, 17 ));
+        snack.setEditable(false);
+        JPanel [] pan = new JPanel[8];
+        for(int i = 0; i<8; i++)
+        {
+            pan[i] = new JPanel();
+        }
+        west.add(pan[0]);
+        west.add(pan[1]);
+        west.add(pan[2]);
+        west.add(pan[3]);
+        west.add(pan[4]);
+        west.add(pan[5]);
+        west.add(pan[6]);
+        west.add(pan[7]);
+
+        pan[1].add(main);
+        pan[1].add(mb);
+
+        pan[4].add(snack);
+        pan[4].add(mb2);
+
+        JTextArea drink = new JTextArea("Drinks     ");
+        main.setEditable(false);
+        JTextArea dessert = new JTextArea("Dessert    " );
+
+        JPanel [] pan2 = new JPanel[8];
+        for(int i = 0; i<8; i++)
+        {
+            pan2[i] = new JPanel();
+        }
+
+        east.add(pan2[0]);
+        east.add(pan2[1]);
+        east.add(pan2[2]);
+        east.add(pan2[3]);
+        east.add(pan2[4]);
+        east.add(pan2[5]);
+        east.add(pan2[6]);
+        east.add(pan2[7]);
     }
     class MenuHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
