@@ -102,6 +102,52 @@ class Practice2 extends JPanel
         m14 = new JMenuItem("Churro");
         m15 = new JMenuItem("Flan");
         m16 = new JMenuItem("Concha");
+        // add ActionListener to menuItems
+        m1.addActionListener(mh);
+        m2.addActionListener(mh);
+        m3.addActionListener(mh);
+        m4.addActionListener(mh);
+        m5.addActionListener(mh);
+        m6.addActionListener(mh);
+        m7.addActionListener(mh);
+        m8.addActionListener(mh);
+        m9.addActionListener(mh);
+        m10.addActionListener(mh);
+        m11.addActionListener(mh);
+        m12.addActionListener(mh);
+        m13.addActionListener(mh);
+        m14.addActionListener(mh);
+        m15.addActionListener(mh);
+        m16.addActionListener(mh);
+
+
+        x.add(m1);
+        x.add(m2);
+        x.add(m3);
+        x.add(m4);
+        mb.add(x);
+
+        x1.add(m5);
+        x1.add(m6);
+        x1.add(m7);
+        x1.add(m8);
+        mb2.add(x1);
+
+        x2.add(m9);
+        x2.add(m10);
+        x2.add(m11);
+        x2.add(m12);
+        mb3.add(x2);
+
+        x3.add(m13);
+        x3.add(m14);
+        x3.add(m15);
+        x3.add(m16);
+        mb4.add(x3);
+
+        pa.setLayout(new BorderLayout());
+        JPanel east = new JPanel(new GridLayout(8,1));
+        JPanel west = new JPanel(new GridLayout(8,1));
     }
     class MenuHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
