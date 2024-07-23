@@ -1,6 +1,6 @@
 /*
 Sai Avula
-3.29.24
+7/22.24
 FoodMenu.java
 Create a food menu
 */
@@ -199,10 +199,82 @@ class Practice2 extends JPanel
         east.add(pan2[5]);
         east.add(pan2[6]);
         east.add(pan2[7]);
+
+        
+        pan2[1].add(drink);
+        pan2[1].add(mb3);
+
+        pan2[4].add(dessert);
+        pan2[4].add(mb4);
+        JPanel lo = new JPanel();
+        center.add(t1);
+        center.add(t2);
+        center.add(t3);
+        center.add(t4);
+        lo.setBackground(Color.white);
+        center.add(lo);
+        center.add(ans);
     }
     class MenuHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            
+            String command = e.getActionCommand();
+            System.out.println(command);
+            check = command;
+            double num = 0;
+            bool = false;
+            if((command.equals("Burrito") || command.equals("Tortas") || command.equals("Fajitas")|| command.equals("Tacos")) && order < 5)
+            {
+                maindish = order;
+                maindishb = true;
+                bool = true;
+                num = 12.99;
+            }
+            else if((command.equals("Chips") || command.equals("Fries") || command.equals("Salad")|| command.equals("Rice")) && order < 5)
+            {
+                side = order;
+                sideb = true;
+                bool = true;
+                num = 4.50;
+            }
+            else if((command.equals("Fanta") || command.equals("Horchada") || command.equals("Lemonade")|| command.equals("Fiji Water")) && order < 5)
+            {
+                drink = order;
+                drinkb = true;
+                bool = true;
+                num = 2.50;
+            }
+            else if((command.equals("Ice cream") || command.equals("Churro") || command.equals("Flan")|| command.equals("Concha")) && order < 5)
+            {
+                dessert = order;
+                dessertb = true;
+                bool = true;
+                num = 5.50;
+            }
+            if(bool)
+            {
+                order++;
+            }
+            if(order == 1)
+            {
+                t1.setText(command + ":    $" + num);
+            }
+            if(order == 2)
+            {
+                t2.setText(command + ":    $" + num);
+            }
+            if(order == 3)
+            {
+                t3.setText(command + ":    $" + num);
+            }
+            if(order == 4)
+            {
+                t4.setText(command + ":    $" + num);
+            }
+            finnum += num;
+            ans.setText("Total    $" + finnum*1.0925);
+            repaint();
+
+        
         }
     }
 }
